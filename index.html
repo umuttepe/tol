@@ -200,6 +200,10 @@
             font-weight: 500;
         }
         
+        
+        /* --- Clickable Cards (make each service card behave like a link) --- */
+        .service-card{cursor:pointer}
+        .service-card:focus, .service-card:focus-visible{outline:3px solid var(--tol-secondary);outline-offset:4px}
         /* --- About Section --- */
         #about p {
             max-width: 800px;
@@ -566,6 +570,35 @@
           });
         }
         form.addEventListener("submit", handleSubmit)
+
+        // === Make service cards clickable: map titles to detail pages ===
+        (function(){
+          const mapping = {
+            'Linear Static FEA':'linear-static-fea',
+            'Transient Dynamics':'transient-dynamics',
+            'Modal & Frequency Response':'modal-frequency-response',
+            'Fatigue Analysis (Weld Specialization)':'fatigue-weld',
+            'Multibody Dynamics & Load Extraction':'multibody-load-extraction',
+            'Structural Optimization':'structural-optimization',
+            'System-Level Optimization':'system-level-optimization',
+            'Control of Mechanical Systems':'control-of-mechanical-systems',
+            'Mechanical System Modeling':'mechanical-system-modeling',
+            'Analysis-Driven CAD Improvements':'cad-design-improvements'
+          };
+          function slugify(s){
+            return s.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+          }
+          document.querySelectorAll('.service-card').forEach(card=>{
+            const title = card.querySelector('h3')?.textContent.trim();
+            const slug = mapping[title] || slugify(title||'');
+            const href = 'services/' + slug + '.html';
+            card.setAttribute('tabindex','0');
+            card.setAttribute('role','link');
+            card.setAttribute('aria-label', (title||'Service') + ' — read more');
+            card.addEventListener('click', ()=>{ window.location.href = href; });
+            card.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); window.location.href = href; }});
+          });
+        })();
     </script>
 
 </body>
