@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umut Tepe | Tepe Optimization Lab - CAE & Optimization Consulting</title>
+    <style>
+        /* --- Global Styles & Color Palette --- */
+        :root {
+            --tol-primary: #0C1B4D;   /* deep navy */
+            --tol-secondary: #4C3ED9; /* indigo */
+            --tol-accent: #F0A6CA;     /* soft pink */
+            --tol-ink: #0A0E12;       /* near-black */
+            --tol-muted: #DADDF2;     /* cool light gray */
+            --tol-bg: #F9FAFF;         /* off-white */
+            --tol-white: #FFFFFF;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--tol-bg);
+            color: var(--tol-ink);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* --- Page Structure & Layout --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header, section, footer {
+            padding: 60px 0;
+        }
+
+        section:nth-of-type(odd) {
+            background-color: var(--tol-white);
+        }
+
+        h1, h2, h3 {
+            color: var(--tol-primary);
+            line-height: 1.2;
+            margin-top: 0;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--tol-secondary);
+            border-bottom: 2px solid var(--tol-muted);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* --- Navigation --- */
+        .navbar {
+            background-color: var(--tol-white);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--tol-muted);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--tol-primary);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--tol-primary);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--tol-secondary);
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            background-color: var(--tol-primary);
+            color: var(--tol-white);
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        #hero h1 {
+            color: var(--tol-white);
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        #hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--tol-accent);
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        #hero .author-info {
+            color: var(--tol-muted);
+            font-size: 1.1rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--tol-secondary);
+            color: var(--tol-white);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #3a2db8; /* Darker indigo */
+        }
+        
+        /* --- Services Section --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--tol-white);
+            border: 1px solid var(--tol-muted);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(76, 62, 217, 0.1);
+        }
+        
+        .service-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            background-color: var(--tol-muted); /* Placeholder color */
+        }
+
+        .service-card h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .service-card h4 {
+            color: var(--tol-primary);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .service-card ul {
+            padding-left: 20px;
+            margin: 0;
+            color: #333;
+        }
+        
+        .service-card .deliverables-box {
+            background-color: rgba(240, 166, 202, 0.2); /* Soft Pink Accent BG */
+            border-left: 4px solid var(--tol-accent);
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+            margin-top: auto; /* Pushes deliverables to the bottom */
+        }
+        
+        .service-card .deliverables-box ul li {
+            font-weight: 500;
+        }
+        
+        /* --- About Section --- */
+        #about p {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        /* --- Contact Section --- */
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+        }
+
+        #contact input, #contact textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid var(--tol-muted);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        #contact button {
+            background-color: var(--tol-secondary);
+            color: var(--tol-white);
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        #contact button:hover {
+            background-color: #3a2db8;
+        }
+
+        #form-status {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            color: var(--tol-secondary);
+        }
+        
+        /* --- Footer --- */
+        footer {
+            background-color: var(--tol-primary);
+            color: var(--tol-muted);
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .navbar .container {
+                flex-direction: column;
+            }
+            .nav-links {
+                margin-top: 10px;
+            }
+            .nav-links a {
+                margin: 0 10px;
+            }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.8rem; }
+            header, section, footer {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================== Navigation ================== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#hero" class="logo">Tepe Optimization Lab</a>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================== Hero Section ================== -->
+    <section id="hero">
+        <div class="container">
+            <h1>Engineering Portfolio</h1>
+            <p class="subtitle">Advanced CAE & Optimization for Complex Mechanical Systems</p>
+            <p class="author-info">Umut Tepe &bull; Milan, IT &bull; Istanbul, TR</p>
+            <a href="#contact" class="cta-button">Discuss Your Project</a>
+        </div>
+    </section>
+
+    <!-- ================== Services Section ================== -->
+    <section id="services">
+        <div class="container">
+            <h2>Our Core Capabilities</h2>
+            <div class="services-grid">
+
+                <!-- Service 1: Linear Static FEA -->
+                <div class="service-card">
+                    <img src="aaaa.png" alt="A 3D mechanical part with a colorful stress analysis heatmap showing areas of high and low stress. The colors transition smoothly from cool blues to warm reds, indicating stress distribution. The image has a clean, technical aesthetic.">
+                    <h3>Linear Static FEA</h3>
+                    <h4>What We Do</h4>
+                    <ul>
+                        <li>Stress/strain and FoS on welded, bolted, and cast parts.</li>
+                        <li>Analyze load paths and verify model quality.</li>
+                        <li>Perform hand calculations for rapid verification.</li>
+                    </ul>
+                    <div class="deliverables-box">
+                        <h4>Deliverables</h4>
+                        <ul>
+                            <li>Hotspot map & design notes</li>
+                            <li>Factor-of-safety table</li>
+                            <li>Model/mesh quality checklist</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2: Transient Dynamics -->
+                <div class="service-card">
+                    <img src="bbbb.png" alt="A 3D mechanical part with a colorful stress analysis heatmap showing areas of high and low stress. The colors transition smoothly from cool blues to warm reds, indicating stress distribution. The image has a clean, technical aesthetic.">
+                    <h3>Transient Dynamics</h3>
+                    <h4>What We Do</h4>
+                    <ul>
+                        <li>Analyze time-domain response to shock and duty cycles.</li>
+                        <li>Select appropriate solvers (explicit/implicit) and identify damping.</li>
+                        <li>Incorporate strain-rate and contact nonlinearity.</li>
+                    </ul>
+                    <div class="deliverables-box">
+                        <h4>Deliverables</h4>
+                        <ul>
+                            <li>Peak response / damage metrics</li>
+                            <li>Critical event analysis for design review</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 3: Modal & Frequency Response -->
+                <div class="service-card">
+                    <img src="cccc.png" alt="A 3D mechanical part with a colorful stress analysis heatmap showing areas of high and low stress. The colors transition smoothly from cool blues to warm reds, indicating stress distribution. The image has a clean, technical aesthetic.">
+                    <h3>Modal & Frequency Response</h3>
+                    <h4>What We Do</h4>
+                    <ul>
+                        <li>Perform modal extraction and boundary condition tuning.</li>
+                        <li>Analyze FRF / sine sweep and operational deflection shapes.</li>
+                        <li>Provide recommendations for vibration isolation.</li>
+                    </ul>
+                    <div class="deliverables-box">
+                        <h4>Deliverables</h4>
+                        <ul>
+                            <li>Mode shape tables & animations</li>
+                            <li>Resonance avoidance playbook</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 4: Fatigue Analysis -->
+                <div class="service-card">
+                    <img src="dddd.png" alt="A 3D mechanical part with a colorful stress analysis heatmap showing areas of high and low stress. The colors transition smoothly from cool blues to warm reds, indicating stress distribution. The image has a clean, technical aesthetic.">
+                    <h3>Fatigue Analysis (Weld Specialization)</h3>
+                    <h4>What We Do</h4>
+                    <ul>
+                        <li>Nominal, structural, and advanced weld fatigue analysis.</li>
+                        <li>Create duty-cycles and perform rainflow damage calculation.</li>
+                        <li>Recommend weld geometry and process improvements.</li>
+                    </ul>
+                    <div class="deliverables-box">
+                        <h4>Deliverables</h4>
+                        <ul>
+                            <li>Fatigue life map + critical weld report</li>
+                            <li>Quantified before/after design improvements</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 5: Multibody Dynamics -->
+                <div class="service-card">
+                    <img src="eeee.png" alt="A 3D mechanical part with a colorful stress analysis heatmap showing areas of high and low stress. The colors transition smoothly from cool blues to warm reds, indicating stress distribution. The image has a clean, technical aesthetic.">
+                    <h3>Multibody Dynamics & Load Extraction</h3>
+                    <h4>What We Do</h4>
+                    <ul>
+                        <li>Develop Adams/Simulink models for events & duty cycles.</li>
+                        <li>Extract joint/constraint forces for FEA boundary loads.</li>
+                        <li>Run parameter sweeps to identify worst-case scenarios.</li>
+                    </ul>
+                    <div class="deliverables-box">
+                        <h4>Deliverables</h4>
+                        <ul>
+                            <li>Comprehensive load case library</li>
+                            <li>Ready-to-run FEA load decks</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Service 6: Structural Optimization -->
+                <div class="service-card">
+                    <img src="ffff.png" alt="A 3D mechanical part with a colorful stress analysis heatmap showing areas of high and low stress. The colors transition smoothly from cool blues to warm reds, indicating stress distribution. The image has a clean, technical aesthetic.">
+                    <h3>Structural Optimization</h3>
+                    <h4>What We Do</h4>
+                    <ul>
+                        <li>Perform topology, size, shape, and gauge optimization.</li>
+                        <li>Manage multi-objective trade-offs (e.g., mass vs. stiffness).</li>
+                        <li>Incorporate manufacturing constraints (symmetry, draw, etc.).</li>
+                    </ul>
+                    <div class="deliverables-box">
+                        <h4>Deliverables</h4>
+                        <ul>
+                            <li>2-3 optimized design concepts</li>
+                            <li>CAD-ready geometry guidance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 7: System-Level Optimization -->
+                <div class="service-card">
+                    <img src="gggg.png" alt="A 3D mechanical part with a colorful stress analysis heatmap showing areas of high and low stress. The colors transition smoothly from cool blues to warm reds, indicating stress distribution. The image has a clean, technical aesthetic.">
+                    <h3>System-Level Optimization</h3>
+                    <h4>What We Do</h4>
+                    <ul>
+                        <li>Optimize architecture across mechanics and control systems.</li>
+                        <li>Use surrogate models for rapid iteration and trade-off studies.</li>
+                        <li>Handle multi-discipline constraints (NVH, thermal, etc.).</li>
+                    </ul>
+                    <div class="deliverables-box">
+                        <h4>Deliverables</h4>
+                        <ul>
+                            <li>Pareto set with recommended design point</li>
+                            <li>Parameter sensitivity analysis</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Service 8: Control of Mechanical Systems -->
+                <div class="service-card">
+                    <img src="https://i.ibb.co/6P0S8Vv/fea-analysis.png" alt="A 3D mechanical part with a colorful stress analysis heatmap showing areas of high and low stress. The colors transition smoothly from cool blues to warm reds, indicating stress distribution. The image has a clean, technical aesthetic.">
+                    <h3>Control of Mechanical Systems</h3>
+                    <h4>What We Do</h4>
+                    <ul>
+                        <li>Model systems with linearization, observers, and friction.</li>
+                        <li>Design robust controllers (PID, LQR, anti-windup).</li>
+                        <li>Perform co-simulation with plant models for validation.</li>
+                    </ul>
+                    <div class="deliverables-box">
+                        <h4>Deliverables</h4>
+                        <ul>
+                            <li>Tuned controller gains and parameters</li>
+                            <li>System performance validation plots</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Service 9: Mechanical System Modeling -->
+                <div class="service-card">
+                    <img src="https://i.ibb.co/6P0S8Vv/fea-analysis.png" alt="A 3D mechanical part with a colorful stress analysis heatmap showing areas of high and low stress. The colors transition smoothly from cool blues to warm reds, indicating stress distribution. The image has a clean, technical aesthetic.">
+                    <h3>Mechanical System Modeling</h3>
+                    <h4>What We Do</h4>
+                    <ul>
+                        <li>Create lumped-parameter and state-space models.</li>
+                        <li>Estimate parameters and validate models against test data.</li>
+                        <li>Develop reduced-order models for control and optimization.</li>
+                    </ul>
+                    <div class="deliverables-box">
+                        <h4>Deliverables</h4>
+                        <ul>
+                            <li>Calibrated model with documented assumptions</li>
+                            <li>Validation plots and error analysis</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Service 10: CAD Design Improvements -->
+                <div class="service-card">
+                    <img src="https://i.ibb.co/6P0S8Vv/fea-analysis.png" alt="A 3D mechanical part with a colorful stress analysis heatmap showing areas of high and low stress. The colors transition smoothly from cool blues to warm reds, indicating stress distribution. The image has a clean, technical aesthetic.">
+                    <h3>Analysis-Driven CAD Improvements</h3>
+                    <h4>What We Do</h4>
+                    <ul>
+                        <li>Propose geometry edits based on stress and fatigue analysis.</li>
+                        <li>Provide design-for-manufacturability (DFM) feedback.</li>
+                        <li>Quickly re-run simulations to confirm improvements.</li>
+                    </ul>
+                    <div class="deliverables-box">
+                        <h4>Deliverables</h4>
+                        <ul>
+                            <li>Annotated CAD files with a change log</li>
+                            <li>Before/after performance metrics (FoS, life, mass)</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================== About Section ================== -->
+    <section id="about">
+        <div class="container">
+            <h2>About Tepe Optimization Lab</h2>
+            <p>
+                Led by Umut Tepe, Tepe Optimization Lab (ToL) is a specialized engineering consultancy focused on Computer-Aided Engineering (CAE) and multi-disciplinary optimization. We partner with clients to solve complex mechanical challenges, enhance product performance, and reduce development time.
+            </p>
+            <p>
+                Operating from Milan and Istanbul, we combine rigorous analytical methods with practical design insights to deliver clear, actionable results that drive innovation and efficiency.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================== Contact Section ================== -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <!-- 
+              IMPORTANT: To make this form work, follow the steps in the instructions. 
+            -->
+            <form id="contact-form" action="https://formspree.io/f/xovkrydl" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="6" placeholder="How can we help you?" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="form-status"></p>
+        </div>
+    </section>
+
+    <!-- ================== Footer ================== -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Tepe Optimization Lab | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        var form = document.getElementById("contact-form");
+        
+        async function handleSubmit(event) {
+          event.preventDefault();
+          var status = document.getElementById("form-status");
+          var data = new FormData(event.target);
+          fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              status.innerHTML = "Thanks for your submission!";
+              form.reset()
+            } else {
+              response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                  status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                } else {
+                  status.innerHTML = "Oops! There was a problem submitting your form"
+                }
+              })
+            }
+          }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+          });
+        }
+        form.addEventListener("submit", handleSubmit)
+    </script>
+
+</body>
+</html>
+
