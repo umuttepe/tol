@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Umut Tepe | Tepe Optimization Lab - CAE & Optimization Consulting</title>
-  <link rel="preload" as="image" href="assets/images/aaaa.png" fetchpriority="high">
-  <link rel="preconnect" href="https://formspree.io">
-  <link rel="dns-prefetch" href="https://formspree.io">
 
-  <!-- External styles -->
+  <!-- Critical preloads -->
+  <link rel="preload" as="image" href="assets/images/aaaa.png" fetchpriority="high" />
+  <link rel="preconnect" href="https://formspree.io" />
+  <link rel="dns-prefetch" href="https://formspree.io" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="css/style.css" />
   <meta name="description" content="Advanced CAE and optimization for complex mechanical systems. Weld fatigue, MBD→FEA load transfer, structural & system optimization." />
 
-  <!-- Slider + form logic -->
+  <!-- Slider + form logic (deferred) -->
   <script src="js/main.js" defer></script>
 </head>
-
-
 <body>
 
   <!-- ================== Navigation ================== -->
@@ -34,12 +34,15 @@
   <!-- ================== Hero Slider ================== -->
   <section id="hero">
     <div class="hero-slider" aria-label="Highlights">
+      <!-- First slide: eager -->
       <div class="hero-slide is-active">
         <img src="assets/images/aaaa.png"
              alt="Analysis highlight 1"
              width="1920" height="960"
              decoding="async" fetchpriority="high">
       </div>
+
+      <!-- Remaining slides: lazy via data-src, loaded by JS right before display -->
       <div class="hero-slide">
         <img data-src="assets/images/bbbb.png"
              alt="Analysis highlight 2"
@@ -80,7 +83,7 @@
         </div>
       </div>
 
-      <!-- Slider nav -->
+      <!-- Slider controls -->
       <button class="hero-nav prev" aria-label="Previous slide">‹</button>
       <button class="hero-nav next" aria-label="Next slide">›</button>
 
@@ -105,7 +108,10 @@
         <!-- Service 1 -->
         <a class="service-card-link" href="services/linear-static-fea.html" aria-label="Linear Static FEA — details">
           <div class="service-card">
-            <img src="assets/images/aaaa.png" alt="Stress analysis heatmap on a mechanical part.">
+            <img src="assets/images/aaaa.png"
+                 alt="Stress analysis heatmap on a mechanical part."
+                 loading="lazy" decoding="async" fetchpriority="low"
+                 width="640" height="360">
             <h3>Linear Static FEA</h3>
             <h4>What We Do</h4>
             <ul>
@@ -127,7 +133,10 @@
         <!-- Service 2 -->
         <a class="service-card-link" href="services/transient-dynamics.html" aria-label="Transient Dynamics — details">
           <div class="service-card">
-            <img src="assets/images/bbbb.png" alt="Transient response illustration with time histories.">
+            <img src="assets/images/bbbb.png"
+                 alt="Transient response illustration with time histories."
+                 loading="lazy" decoding="async" fetchpriority="low"
+                 width="640" height="360">
             <h3>Transient Dynamics</h3>
             <h4>What We Do</h4>
             <ul>
@@ -148,7 +157,10 @@
         <!-- Service 3 -->
         <a class="service-card-link" href="services/modal-frequency-response.html" aria-label="Modal & Frequency Response — details">
           <div class="service-card">
-            <img src="assets/images/cccc.png" alt="Modal/FRF plot or mode shape visualization.">
+            <img src="assets/images/cccc.png"
+                 alt="Modal/FRF plot or mode shape visualization."
+                 loading="lazy" decoding="async" fetchpriority="low"
+                 width="640" height="360">
             <h3>Modal & Frequency Response</h3>
             <h4>What We Do</h4>
             <ul>
@@ -169,7 +181,10 @@
         <!-- Service 4 -->
         <a class="service-card-link" href="services/fatigue-weld.html" aria-label="Fatigue Analysis (Weld Specialization) — details">
           <div class="service-card">
-            <img src="assets/images/dddd.png" alt="Fatigue life contour on welded structure.">
+            <img src="assets/images/dddd.png"
+                 alt="Fatigue life contour on welded structure."
+                 loading="lazy" decoding="async" fetchpriority="low"
+                 width="640" height="360">
             <h3>Fatigue Analysis (Weld Specialization)</h3>
             <h4>What We Do</h4>
             <ul>
@@ -190,7 +205,10 @@
         <!-- Service 5 -->
         <a class="service-card-link" href="services/multibody-load-extraction.html" aria-label="Multibody Dynamics & Load Extraction — details">
           <div class="service-card">
-            <img src="assets/images/eeee.png" alt="Multibody mechanism schematic / load extraction.">
+            <img src="assets/images/eeee.png"
+                 alt="Multibody mechanism schematic / load extraction."
+                 loading="lazy" decoding="async" fetchpriority="low"
+                 width="640" height="360">
             <h3>Multibody Dynamics & Load Extraction</h3>
             <h4>What We Do</h4>
             <ul>
@@ -211,7 +229,10 @@
         <!-- Service 6 -->
         <a class="service-card-link" href="services/structural-optimization.html" aria-label="Structural Optimization — details">
           <div class="service-card">
-            <img src="assets/images/ffff.png" alt="Topology/shape optimization visualization.">
+            <img src="assets/images/ffff.png"
+                 alt="Topology/shape optimization visualization."
+                 loading="lazy" decoding="async" fetchpriority="low"
+                 width="640" height="360">
             <h3>Structural Optimization</h3>
             <h4>What We Do</h4>
             <ul>
@@ -232,7 +253,10 @@
         <!-- Service 7 -->
         <a class="service-card-link" href="services/system-level-optimization.html" aria-label="System-Level Optimization — details">
           <div class="service-card">
-            <img src="assets/images/gggg.pnh" alt="System-level optimization / Pareto plot placeholder.">
+            <img src="assets/images/gggg.pnh"
+                 alt="System-level optimization / Pareto plot placeholder."
+                 loading="lazy" decoding="async" fetchpriority="low"
+                 width="640" height="360">
             <h3>System-Level Optimization</h3>
             <h4>What We Do</h4>
             <ul>
@@ -253,7 +277,10 @@
         <!-- Service 8 -->
         <a class="service-card-link" href="services/control-of-mechanical-systems.html" aria-label="Control of Mechanical Systems — details">
           <div class="service-card">
-            <img src="assets/images/aaaa.png" alt="Control block diagram placeholder.">
+            <img src="assets/images/aaaa.png"
+                 alt="Control block diagram placeholder."
+                 loading="lazy" decoding="async" fetchpriority="low"
+                 width="640" height="360">
             <h3>Control of Mechanical Systems</h3>
             <h4>What We Do</h4>
             <ul>
@@ -274,7 +301,10 @@
         <!-- Service 9 -->
         <a class="service-card-link" href="services/mechanical-system-modeling.html" aria-label="Mechanical System Modeling — details">
           <div class="service-card">
-            <img src="assets/images/bbbb.png" alt="State-space / model validation placeholder.">
+            <img src="assets/images/bbbb.png"
+                 alt="State-space / model validation placeholder."
+                 loading="lazy" decoding="async" fetchpriority="low"
+                 width="640" height="360">
             <h3>Mechanical System Modeling</h3>
             <h4>What We Do</h4>
             <ul>
@@ -295,7 +325,10 @@
         <!-- Service 10 -->
         <a class="service-card-link" href="services/cad-design-improvements.html" aria-label="Analysis-Driven CAD Improvements — details">
           <div class="service-card">
-            <img src="assets/images/cccc.png" alt="CAD before/after improvement placeholder.">
+            <img src="assets/images/cccc.png"
+                 alt="CAD before/after improvement placeholder."
+                 loading="lazy" decoding="async" fetchpriority="low"
+                 width="640" height="360">
             <h3>Analysis-Driven CAD Improvements</h3>
             <h4>What We Do</h4>
             <ul>
@@ -351,10 +384,5 @@
     </div>
   </footer>
 
-  <!-- External script (slider + form handler live here) -->
-  <script src="js/main.js" defer></script>
 </body>
 </html>
-
-
-
