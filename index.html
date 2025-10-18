@@ -9,97 +9,7 @@
   <link rel="preconnect" href="https://formspree.io" />
   <link rel="dns-prefetch" href="https://formspree.io" />
 
-    <style>
-    /* === Variables === */
-    :root{
-      --tol-primary:#0C1B4D;
-      --tol-secondary:#4C3ED9;
-      --tol-muted:#DADDF2;
-      --tol-white:#FFFFFF;
-      --tol-bg:#F9FAFF;
-    }
-    /* === Base === */
-    *{box-sizing:border-box}
-    body{
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      margin:0;padding:0;background:var(--tol-bg);line-height:1.6;
-    }
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    header,section,footer{padding:60px 0} /* Base padding, overridden by #hero */
-    h1{color:var(--tol-primary);line-height:1.2;margin-top:0}
-
-    /* === Nav === */
-    .navbar{background:var(--tol-white);padding:15px 0;border-bottom:1px solid var(--tol-muted);position:sticky;top:0;z-index:1000}
-    .navbar .container{display:flex;justify-content:space-between;align-items:center}
-    .logo{font-size:1.5rem;font-weight:700;color:var(--tol-primary);text-decoration:none}
-    .nav-links a{color:var(--tol-primary);text-decoration:none;margin-left:25px;font-weight:500;transition:color .3s}
-    .nav-links a:hover{color:var(--tol-secondary)}
-
-    /* === HERO SLIDER (Critical) === */
-    #hero{ padding:0; background:transparent; color:#fff }
-    .hero-slider{ position:relative; height:64vh; min-height:420px; max-height:720px; overflow:hidden; }
-    .hero-slide{ position:absolute; inset:0; opacity:0; visibility:hidden; pointer-events:none; transition:opacity 600ms ease; }
-    .hero-slide.is-active{ opacity:1; visibility:visible; pointer-events:auto; }
-    .hero-slide img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .hero-overlay{ position:absolute; inset:0; display:flex; align-items:center; pointer-events:none; }
-    .hero-overlay::before{
-      content:""; position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(12,27,77,.55), rgba(12,27,77,.15) 45%, rgba(0,0,0,0) 100%);
-      pointer-events:none;
-    }
-    .overlay-content{ position:relative; z-index:1; pointer-events:auto; }
-    #hero h1{ color:#fff; font-size:3rem; margin:0 0 10px; }
-    #hero .subtitle{ color:var(--tol-muted); font-size:1.25rem; margin-bottom:18px; }
-    #hero .cta-button{
-      /* Base button styles needed for hero */
-      display:inline-block;
-      color:#fff;
-      font-weight:700;
-      padding:12px 18px;
-      border-radius:8px;
-      text-decoration:none;
-      /* Hero-specific overrides */
-      background:var(--tol-secondary);
-    }
-    #hero .cta-button:hover{ background:#3a2db8; }
-    .hero-nav,.hero-dots{ position:absolute; z-index:3; }
-    .hero-nav{
-      top:50%; transform:translateY(-50%);
-      background:rgba(0,0,0,.35); color:#fff; border:0; width:44px; height:44px;
-      border-radius:50%; font-size:26px; line-height:44px; cursor:pointer;
-      display:flex; align-items:center; justify-content:center;
-    }
-    .hero-nav:hover{ background:rgba(0,0,0,.5); }
-    .hero-nav.prev{ left:14px; }
-    .hero-nav.next{ right:14px; }
-    .hero-dots{ left:0; right:0; bottom:14px; display:flex; justify-content:center; gap:10px; }
-s   .hero-dots .dot{
-      width:10px; height:10px; border-radius:50%; border:1px solid rgba(255,255,255,.8); background:rgba(255,255,255,.3);
-      cursor:pointer;
-    }
-    .hero-dots .dot.is-active{ background:#fff; }
-
-    /* === Critical Responsive === */
-    @media (max-width:900px){
-      .hero-slider{ height:56vh; min-height:360px; }
-      #hero h1{ font-size:2.2rem; }
-      #hero .subtitle{ font-size:1.05rem; }
-    }
-    @media (max-width:768px){
-      .navbar .container{flex-direction:column}
-      .nav-links{margin-top:10px}
-      .nav-links a{margin:0 10px}
-      h1{font-size:2.5rem}
-      header,section,footer{padding:40px 0}
-    }
-    @media (max-width:600px){
-      .hero-slider{ height:50vh; min-height:300px; }
-      .hero-nav{ width:38px; height:38px; font-size:22px; }
-    }
-  </style>
-
-    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+    <link rel="stylesheet" href="css/style.css" />
   
   <meta name="description" content="Advanced CAE and optimization for complex mechanical systems. Weld fatigue, MBD→FEA load transfer, structural & system optimization." />
 
@@ -149,13 +59,13 @@ s   .hero-dots .dot{
         <img data-src="assets/images/eeee.png"
              alt="Analysis highlight 5"
              width="1920" height="960"
-             loading="lazy" decoding="async">
+            	loading="lazy" decoding="async">
       </div>
       <div class="hero-slide">
         <img data-src="assets/images/ffff.png"
              alt="Analysis highlight 6"
-             width="1920" height="960"
-             loading="lazy" decoding="async">
+            	width="1920" height="960"
+            	loading="lazy" decoding="async">
       </div>
 
             <div class="hero-overlay">
@@ -182,252 +92,252 @@ s   .hero-dots .dot{
 
     <section id="services">
     <div class="container">
-      <h2>Our Core Capabilities</h2>
-      <div class="services-grid">
+    	<h2>Our Core Capabilities</h2>
+    	<div class="services-grid">
 
-                <a class="service-card-link" href="services/linear-static-fea.html" aria-label="Linear Static FEA — details">
-          <div class="service-card">
-            <img src="assets/images/aaaa.png"
-                 alt="Stress analysis heatmap on a mechanical part."
-                 loading="lazy" decoding="async" fetchpriority="low"
-                 width="640" height="360">
-            <h3>Linear Static FEA</h3>
-            <h4>What We Do</h4>
-            <ul>
-              <li>Stress/strain and FoS on welded, bolted, and cast parts.</li>
-              <li>Analyze load paths and verify model quality.</li>
-              <li>Perform hand calculations for rapid verification.</li>
-            </ul>
-            <div class="deliverables-box">
-              <h4>Deliverables</h4>
-              <ul>
-                <li>Hotspot map & design notes</li>
-                <li>Factor-of-safety table</li>
-                <li>Model/mesh quality checklist</li>
-              </ul>
-            </div>
-          </div>
-        </a>
-
-                <a class="service-card-link" href="services/transient-dynamics.html" aria-label="Transient Dynamics — details">
-          <div class="service-card">
-            <img src="assets/images/bbbb.png"
-                 alt="Transient response illustration with time histories."
-                 loading="lazy" decoding="async" fetchpriority="low"
-                 width="640" height="360">
-            <h3>Transient Dynamics</h3>
-            <h4>What We Do</h4>
-            <ul>
-              <li>Analyze time-domain response to shock and duty cycles.</li>
-              <li>Select appropriate solvers (explicit/implicit) and identify damping.</li>
-              <li>Incorporate strain-rate and contact nonlinearity.</li>
-            </ul>
-            <div class="deliverables-box">
-              <h4>Deliverables</h4>
-              <ul>
-                <li>Peak response / damage metrics</li>
-                <li>Critical event analysis for design review</li>
-              </ul>
-            </div>
-          </div>
-        </a>
-
-                <a class="service-card-link" href="services/modal-frequency-response.html" aria-label="Modal & Frequency Response — details">
-          <div class="service-card">
-            <img src="assets/images/cccc.png"
-                 alt="Modal/FRF plot or mode shape visualization."
-                 loading="lazy" decoding="async" fetchpriority="low"
-                 width="640" height="360">
-            <h3>Modal & Frequency Response</h3>
-            <h4>What We Do</h4>
-            <ul>
-              <li>Perform modal extraction and boundary condition tuning.</li>
-              <li>Analyze FRF / sine sweep and operational deflection shapes.</li>
-              <li>Provide recommendations for vibration isolation.</li>
-            </ul>
-            <div class="deliverables-box">
-              <h4>Deliverables</h4>
-              <ul>
-                <li>Mode shape tables & animations</li>
-                <li>Resonance avoidance playbook</li>
-              </ul>
-            </div>
-          </div>
-        </a>
-
-                <a class="service-card-link" href="services/fatigue-weld.html" aria-label="Fatigue Analysis (Weld Specialization) — details">
-          <div class="service-card">
-            <img src="assets/images/dddd.png"
-                 alt="Fatigue life contour on welded structure."
-                 loading="lazy" decoding="async" fetchpriority="low"
-                D width="640" height="360">
-            <h3>Fatigue Analysis (Weld Specialization)</h3>
-            <h4>What We Do</h4>
-            <ul>
-              <li>Nominal, structural, and advanced weld fatigue analysis.</li>
-              <li>Create duty-cycles and perform rainflow damage calculation.</li>
-              <li>Recommend weld geometry and process improvements.</li>
-            </ul>
-            <div class="deliverables-box">
-              <h4>Deliverables</h4>
-              <ul>
-                <li>Fatigue life map + critical weld report</li>
-                <li>Quantified before/after design improvements</li>
-              </ul>
-            </div>
-          </div>
-        </a>
-
-                <a class="service-card-link" href="services/multibody-load-extraction.html" aria-label="Multibody Dynamics & Load Extraction — details">
-          <div class="service-card">
-            <img src="assets/images/eeee.png"
-                 alt="Multibody mechanism schematic / load extraction."
-                 loading="lazy" decoding="async" fetchpriority="low"
-                 width="640" height="360">
-            <h3>Multibody Dynamics & Load Extraction</h3>
-            <h4>What We Do</h4>
-            <ul>
-              <li>Develop Adams/Simulink models for events & duty cycles.</li>
-              <li>Extract joint/constraint forces for FEA boundary loads.</li>
-              <li>Run parameter sweeps to identify worst-case scenarios.</li>
-            </ul>
-            <div class="deliverables-box">
-              <h4>Deliverables</h4>
-              <ul>
-                <li>Comprehensive load case library</li>
-                <li>Ready-to-run FEA load decks</li>
-              </ul>
-    M       </div>
-          </div>
-        </a>
-
-                <a class="service-card-link" href="services/structural-optimization.html" aria-label="Structural Optimization — details">
-          <div class="service-card">
-            <img src="assets/images/ffff.png"
-                 alt="Topology/shape optimization visualization."
-                 loading="lazy" decoding="async" fetchpriority="low"
-                 width="640" height="360">
-            <h3>Structural Optimization</h3>
-            <h4>What We Do</h4>
-            <ul>
-              <li>Perform topology, size, shape, and gauge optimization.</li>
-              <li>Manage multi-objective trade-offs (e.g., mass vs. stiffness).</li>
-              <li>Incorporate manufacturing constraints (symmetry, draw, etc.).</li>
-            </ul>
-            <div class="deliverables-box">
-              <h4>Deliverables</h4>
-              <ul>
-                <li>2-3 optimized design concepts</li>
-                <li>CAD-ready geometry guidance</li>
-              </ul>
-            </div>
-          </div>
-        </a>
-
-                <a class="service-card-link" href="services/system-level-optimization.html" aria-label="System-Level Optimization — details">
-          <div class="service-card">
-            <img src="assets/images/gggg.png"
-                 alt="System-level optimization / Pareto plot placeholder."
-                 loading="lazy" decoding="async" fetchpriority="low"
-                 width="640" height="360">
-            <h3>System-Level Optimization</h3>
-            <h4>What We Do</h4>
-            <ul>
-              <li>Optimize architecture across mechanics and control systems.</li>
-              <li>Use surrogate models for rapid iteration and trade-off studies.</li>
-              <li>Handle multi-discipline constraints (NVH, thermal, etc.).</li>
-            </ul>
-            <div class="deliverables-box">
-              <h4>Deliverables</h4>
-              <ul>
-                <li>Pareto set with recommended design point</li>
-                <li>Parameter sensitivity analysis</li>
-              </ul>
-            </div>
-          </div>
-        </a>
-
-                <a class="service-card-link" href="services/control-of-mechanical-systems.html" aria-label="Control of Mechanical Systems — details">
-          <div class="service-card">
-            <img src="assets/images/aaaa.png"
-                 alt="Control block diagram placeholder."
-                 loading="lazy" decoding="async" fetchpriority="low"
-                 width="640" height="360">
-            <h3>Control of Mechanical Systems</h3>
-            <h4>What We Do</h4>
-            <ul>
-              <li>Model systems with linearization, observers, and friction.</li>
-              <li>Design robust controllers (PID, LQR, anti-windup).</li>
-              <li>Perform co-simulation with plant models for validation.</li>
-            </ul>
-            <div class="deliverables-box">
-              <h4>Deliverables</h4>
-              <ul>
-                <li>Tuned controller gains and parameters</li>
-                <li>System performance validation plots</li>
-              </ul>
-            </div>
-          </div>
-        </a>
-
-                <a class="service-card-link" href="services/mechanical-system-modeling.html" aria-label="Mechanical System Modeling — details">
-          <div class="service-card">
-            <img src="assets/images/bbbb.png"
-                 alt="State-space / model validation placeholder."
-                 loading="lazy" decoding="async" fetchpriority="low"
-                 width="640" height="360">
-            <h3>Mechanical System Modeling</h3>
-            <h4>What We Do</h4>
-            <ul>
-              <li>Create lumped-parameter and state-space models.</li>
-              <li>Estimate parameters and validate models against test data.</li>
-              <li>Develop reduced-order models for control and optimization.</li>
-            </ul>
-            <div class="deliverables-box">
-              <h4>Deliverables</h4>
-              <ul>
-                <li>Calibrated model with documented assumptions</li>
-                <li>Validation plots and error analysis</li>
-              </ul>
-            </div>
-          </div>
-        </a>
-
-                <a class="service-card-link" href="services/cad-design-improvements.html" aria-label="Analysis-Driven CAD Improvements — details">
-          <div class="service-card">
-            <img src="assets/images/cccc.png"
-                 alt="CAD before/after improvement placeholder."
-                 loading="lazy" decoding="async" fetchpriority="low"
-                 width="640" height="360">
-            <h3>Analysis-Driven CAD Improvements</h3>
-            <h4>What We Do</h4>
-            <ul>
-              <li>Propose geometry edits based on stress and fatigue analysis.</li>
-              <li>Provide design-for-manufacturability (DFM) feedback.</li>
-            	<li>Quickly re-run simulations to confirm improvements.</li>
-            </ul>
-            <div class="deliverables-box">
-              <h4>Deliverables</h4>
-              <ul>
-                <li>Annotated CAD files with a change log</li>
-              	<li>Before/after performance metrics (FoS, life, mass)</li>
-              </ul>
-  	        </div>
-          </div>
+      	      	<a class="service-card-link" href="services/linear-static-fea.html" aria-label="Linear Static FEA — details">
+      	  <div class="service-card">
+        	<img src="assets/images/aaaa.png"
+               alt="Stress analysis heatmap on a mechanical part."
+               loading="lazy" decoding="async" fetchpriority="low"
+               width="640" height="360">
+        	<h3>Linear Static FEA</h3>
+        	<h4>What We Do</h4>
+        	<ul>
+          	<li>Stress/strain and FoS on welded, bolted, and cast parts.</li>
+          	<li>Analyze load paths and verify model quality.</li>
+          	<li>Perform hand calculations for rapid verification.</li>
+        	</ul>
+        	<div class="deliverables-box">
+          	<h4>Deliverables</h4>
+          	<ul>
+            	<li>Hotspot map & design notes</li>
+            	<li>Factor-of-safety table</li>
+            	<li>Model/mesh quality checklist</li>
+          	</ul>
+        	</div>
+      	  </div>
       	</a>
 
-      </div>
-    </div>
+      	      	<a class="service-card-link" href="services/transient-dynamics.html" aria-label="Transient Dynamics — details">
+      	  <div class="service-card">
+        	<img src="assets/images/bbbb.png"
+               alt="Transient response illustration with time histories."
+               loading="lazy" decoding="async" fetchpriority="low"
+               width="640" height="360">
+        	<h3>Transient Dynamics</h3>
+    	  	  <h4>What We Do</h4>
+    	  	  <ul>
+    	    	  <li>Analyze time-domain response to shock and duty cycles.</li>
+    	    	  <li>Select appropriate solvers (explicit/implicit) and identify damping.</li>
+    	    	  <li>Incorporate strain-rate and contact nonlinearity.</li>
+    	  	  </ul>
+    	  	  <div class="deliverables-box">
+    	    	  <h4>Deliverables</h4>
+    	    	  <ul>
+    	      	  <li>Peak response / damage metrics</li>
+    	      	  <li>Critical event analysis for design review</li>
+    	    	  </ul>
+    	  	  </div>
+    	    </div>
+    	</a>
+
+    	    	<a class="service-card-link" href="services/modal-frequency-response.html" aria-label="Modal & Frequency Response — details">
+    	  <div class="service-card">
+      	<img src="assets/images/cccc.png"
+              alt="Modal/FRF plot or mode shape visualization."
+              loading="lazy" decoding="async" fetchpriority="low"
+              width="640" height="360">
+      	<h3>Modal & Frequency Response</h3>
+      	<h4>What We Do</h4>
+      	<ul>
+        	<li>Perform modal extraction and boundary condition tuning.</li>
+        	<li>Analyze FRF / sine sweep and operational deflection shapes.</li>
+        	<li>Provide recommendations for vibration isolation.</li>
+      	</ul>
+      	<div class="deliverables-box">
+        	<h4>Deliverables</h4>
+        	<ul>
+          	<li>Mode shape tables & animations</li>
+          	<li>Resonance avoidance playbook</li>
+        	</ul>
+      	</div>
+    	  </div>
+    	</a>
+
+    	    	<a class="service-card-link" href="services/fatigue-weld.html" aria-label="Fatigue Analysis (Weld Specialization) — details">
+    	  <div class="service-card">
+      	<img src="assets/images/dddd.png"
+              alt="Fatigue life contour on welded structure."
+              loading="lazy" decoding="async" fetchpriority="low"
+              width="640" height="360">
+      	<h3>Fatigue Analysis (Weld Specialization)</h3>
+      	<h4>What We Do</h4>
+      	<ul>
+        	<li>Nominal, structural, and advanced weld fatigue analysis.</li>
+        	<li>Create duty-cycles and perform rainflow damage calculation.</li>
+        	<li>Recommend weld geometry and process improvements.</li>
+      	</ul>
+      	<div class="deliverables-box">
+        	<h4>Deliverables</h4>
+        	<ul>
+          	<li>Fatigue life map + critical weld report</li>
+          	<li>Quantified before/after design improvements</li>
+        	</ul>
+      	</div>
+    	  </div>
+    	</a>
+
+    	    	<a class="service-card-link" href="services/multibody-load-extraction.html" aria-label="Multibody Dynamics & Load Extraction — details">
+    	  <div class="service-card">
+      	<img src="assets/images/eeee.png"
+              alt="Multibody mechanism schematic / load extraction."
+              loading="lazy" decoding="async" fetchpriority="low"
+              width="640" height="360">
+      	<h3>Multibody Dynamics & Load Extraction</h3>
+      	<h4>What We Do</h4>
+      	<ul>
+        	<li>Develop Adams/Simulink models for events & duty cycles.</li>
+        	<li>Extract joint/constraint forces for FEA boundary loads.</li>
+        	<li>Run parameter sweeps to identify worst-case scenarios.</li>
+      	</ul>
+      	<div class="deliverables-box">
+        	<h4>Deliverables</h4>
+        	<ul>
+          	<li>Comprehensive load case library</li>
+          	<li>Ready-to-run FEA load decks</li>
+        	</ul>
+      	</div>
+    	  </div>
+  	</a>
+
+  	  	<a class="service-card-link" href="services/structural-optimization.html" aria-label="Structural Optimization — details">
+  	  <div class="service-card">
+    	<img src="assets/images/ffff.png"
+              alt="Topology/shape optimization visualization."
+              loading="lazy" decoding="async" fetchpriority="low"
+              width="640" height="360">
+    	<h3>Structural Optimization</h3>
+    	<h4>What We Do</h4>
+    	<ul>
+      	<li>Perform topology, size, shape, and gauge optimization.</li>
+      	<li>Manage multi-objective trade-offs (e.g., mass vs. stiffness).</li>
+      	<li>Incorporate manufacturing constraints (symmetry, draw, etc.).</li>
+    	</ul>
+    	<div class="deliverables-box">
+      	<h4>Deliverables</h4>
+      	<ul>
+        	<li>2-3 optimized design concepts</li>
+        	<li>CAD-ready geometry guidance</li>
+      	</ul>
+    	</div>
+  	  </div>
+  	</a>
+
+  	  	<a class="service-card-link" href="services/system-level-optimization.html" aria-label="System-Level Optimization — details">
+  	  <div class="service-card">
+    	<img src="assets/images/gggg.png"
+              alt="System-level optimization / Pareto plot placeholder."
+              loading="lazy" decoding="async" fetchpriority="low"
+              width="640" height="360">
+    	<h3>System-Level Optimization</h3>
+    	<h4>What We Do</h4>
+    	<ul>
+      	<li>Optimize architecture across mechanics and control systems.</li>
+      	<li>Use surrogate models for rapid iteration and trade-off studies.</li>
+      	<li>Handle multi-discipline constraints (NVH, thermal, etc.).</li>
+    	</ul>
+    	<div class="deliverables-box">
+      	<h4>Deliverables</h4>
+      	<ul>
+        	<li>Pareto set with recommended design point</li>
+        	<li>Parameter sensitivity analysis</li>
+      	</ul>
+    	</div>
+  	  </div>
+  	</a>
+
+  	  	<a class="service-card-link" href="services/control-of-mechanical-systems.html" aria-label="Control of Mechanical Systems — details">
+  	  <div class="service-card">
+    	<img src="assets/images/aaaa.png"
+              alt="Control block diagram placeholder."
+              loading="lazy" decoding="async" fetchpriority="low"
+              width="640" height="360">
+    	<h3>Control of Mechanical Systems</h3>
+    	<h4>What We Do</h4>
+    	<ul>
+      	<li>Model systems with linearization, observers, and friction.</li>
+      	<li>Design robust controllers (PID, LQR, anti-windup).</li>
+      	<li>Perform co-simulation with plant models for validation.</li>
+    	</ul>
+    	<div class="deliverables-box">
+      	<h4>Deliverables</h4>
+      	<ul>
+        	<li>Tuned controller gains and parameters</li>
+        	<li>System performance validation plots</li>
+      	</ul>
+    	</div>
+  	  </div>
+  	</a>
+
+  	  	<a class="service-card-link" href="services/mechanical-system-modeling.html" aria-label="Mechanical System Modeling — details">
+  	  <div class="service-card">
+    	<img src="assets/images/bbbb.png"
+              alt="State-space / model validation placeholder."
+              loading="lazy" decoding="async" fetchpriority="low"
+              width="640" height="360">
+    	<h3>Mechanical System Modeling</h3>
+    	<h4>What We Do</h4>
+    	<ul>
+      	<li>Create lumped-parameter and state-space models.</li>
+      	<li>Estimate parameters and validate models against test data.</li>
+      	<li>Develop reduced-order models for control and optimization.</li>
+    	</ul>
+    	<div class="deliverables-box">
+      	<h4>Deliverables</h4>
+      	<ul>
+        	<li>Calibrated model with documented assumptions</li>
+        	<li>Validation plots and error analysis</li>
+      	</ul>
+    	</div>
+  	  </div>
+  	</a>
+
+  	  	<a class="service-card-link" href="services/cad-design-improvements.html" aria-label="Analysis-Driven CAD Improvements — details">
+  	  <div class="service-card">
+    	<img src="assets/images/cccc.png"
+              alt="CAD before/after improvement placeholder."
+              loading="lazy" decoding="async" fetchpriority="low"
+              width="640" height="360">
+    	<h3>Analysis-Driven CAD Improvements</h3>
+    	<h4>What We Do</h4>
+    	<ul>
+      	<li>Propose geometry edits based on stress and fatigue analysis.</li>
+      	<li>Provide design-for-manufacturability (DFM) feedback.</li>
+      	<li>Quickly re-run simulations to confirm improvements.</li>
+    	</ul>
+    	<div class="deliverables-box">
+      	<h4>Deliverables</h4>
+      	<ul>
+        	<li>Annotated CAD files with a change log</li>
+        	<li>Before/after performance metrics (FoS, life, mass)</li>
+      	</ul>
+    	</div>
+  	  </div>
+  	</a>
+
+  	</div>
+    </div>
   </section>
 
     <section id="about">
   	<div class="container">
   	  <h2>About Tepe Optimization Lab</h2>
   	  <p>
-  	    Led by Umut Tepe, Tepe Optimization Lab (ToL) is a specialized engineering consultancy focused on Computer-Aided Engineering (CAE) and multi-disciplinary optimization. We partner with clients to solve complex mechanical challenges, enhance product performance, and reduce development time.
+  	   	Led by Umut Tepe, Tepe Optimization Lab (ToL) is a specialized engineering consultancy focused on Computer-Aided Engineering (CAE) and multi-disciplinary optimization. We partner with clients to solve complex mechanical challenges, enhance product performance, and reduce development time.
   	  </p>
   	  <p>
-      	Operating from Milan and Istanbul, we combine rigorous analytical methods with practical design insights to deliver clear, actionable results that drive innovation and efficiency.
+  	   	Operating from Milan and Istanbul, we combine rigorous analytical methods with practical design insights to deliver clear, actionable results that drive innovation and efficiency.
   	  </p>
   	</div>
   </section>
