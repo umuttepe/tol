@@ -1,1 +1,78 @@
+/* === ToL Palette === */
+:root{
+  --tol-primary:#0C1B4D;  /* deep navy */
+  --tol-secondary:#4C3ED9;/* indigo */
+  --tol-accent:#F0A6CA;   /* soft pink */
+  --tol-ink:#0A0E12;      /* near-black */
+  --tol-muted:#DADDF2;    /* cool light gray */
+  --tol-bg:#F9FAFF;       /* off-white */
+  --tol-white:#FFFFFF;
+}
+
+/* === Base === */
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  margin:0;padding:0;background:var(--tol-bg);color:var(--tol-ink);line-height:1.6;font-size:16px;
+}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header,section,footer{padding:60px 0}
+section:nth-of-type(odd){background:var(--tol-white)}
+h1,h2,h3{color:var(--tol-primary);line-height:1.2;margin-top:0}
+h2{text-align:center;font-size:2.2rem;margin-bottom:40px}
+h3{font-size:1.5rem;color:var(--tol-secondary);border-bottom:2px solid var(--tol-muted);padding-bottom:8px;margin-bottom:15px}
+
+/* === Nav === */
+.navbar{background:var(--tol-white);padding:15px 0;border-bottom:1px solid var(--tol-muted);position:sticky;top:0;z-index:1000}
+.navbar .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:1.5rem;font-weight:700;color:var(--tol-primary);text-decoration:none}
+.nav-links a{color:var(--tol-primary);text-decoration:none;margin-left:25px;font-weight:500;transition:color .3s}
+.nav-links a:hover{color:var(--tol-secondary)}
+
+/* === Hero === */
+#hero{background:var(--tol-primary);color:#fff;text-align:center;padding:80px 0}
+#hero h1{color:#fff;font-size:3rem;margin-bottom:10px}
+#hero .subtitle{font-size:1.5rem;color:var(--tol-accent);font-weight:500;margin-bottom:30px}
+#hero .author-info{color:var(--tol-muted);font-size:1.1rem}
+.cta-button{display:inline-block;background:var(--tol-secondary);color:#fff;padding:12px 25px;border-radius:5px;text-decoration:none;font-weight:700;margin-top:20px;transition:background .3s}
+.cta-button:hover{background:#3a2db8}
+
+/* === Services Grid & Cards === */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px}
+
+/* Anchor wrapper so cards are true links */
+.service-card-link{display:block;color:inherit;text-decoration:none}
+.service-card-link:focus .service-card,.service-card-link:focus-visible .service-card{outline:3px solid var(--tol-secondary);outline-offset:4px}
+
+.service-card{background:#fff;border:1px solid var(--tol-muted);border-radius:8px;padding:25px;box-shadow:0 4px 12px rgba(0,0,0,.05);transition:transform .3s, box-shadow .3s;display:flex;flex-direction:column;cursor:pointer}
+.service-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(76,62,217,.1)}
+.service-card img{width:100%;height:180px;object-fit:cover;border-radius:6px;margin-bottom:20px;background:var(--tol-muted)}
+.service-card h3{margin-top:0;font-size:1.3rem}
+.service-card h4{color:var(--tol-primary);font-size:1rem;margin-bottom:8px}
+.service-card ul{padding-left:20px;margin:0;color:#333}
+.service-card .deliverables-box{background:rgba(240,166,202,.2);border-left:4px solid var(--tol-accent);padding:15px;border-radius:4px;margin-top:auto}
+.service-card .deliverables-box ul li{font-weight:500}
+
+/* === About === */
+#about p{max-width:800px;margin:0 auto 20px;text-align:center;font-size:1.1rem}
+
+/* === Contact === */
+#contact form{max-width:600px;margin:0 auto;display:grid;gap:20px}
+#contact input,#contact textarea{width:100%;padding:12px;border-radius:5px;border:1px solid var(--tol-muted);font-family:inherit;font-size:1rem}
+#contact button{background:var(--tol-secondary);color:#fff;border:0;padding:15px;border-radius:5px;font-size:1.1rem;font-weight:700;cursor:pointer;transition:background .3s}
+#contact button:hover{background:#3a2db8}
+#form-status{text-align:center;margin-top:20px;font-weight:700;color:var(--tol-secondary)}
+
+/* === Footer === */
+footer{background:var(--tol-primary);color:var(--tol-muted);text-align:center;padding:30px 0}
+
+/* === Responsive === */
+@media (max-width:768px){
+  .navbar .container{flex-direction:column}
+  .nav-links{margin-top:10px}
+  .nav-links a{margin:0 10px}
+  h1{font-size:2.5rem}
+  h2{font-size:1.8rem}
+  header,section,footer{padding:40px 0}
+}
 
