@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             status.textContent = data["errors"].map(error => error["message"]).join(", ");
           } else {
             status.textContent = 'Oops! There was a problem submitting your form';
-          }
+img         }
           status.style.color = '#d94c3e'; // Error color
         });
       }
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const slides = Array.from(slider.querySelectorAll('.hero-slide'));
   const dots = Array.from(slider.querySelectorAll('.hero-dots .dot'));
   const prevBtn = slider.querySelector('.hero-nav.prev');
-  const nextBtn = slider.querySelector('.hero-nav.next');
+m   const nextBtn = slider.querySelector('.hero-nav.next');
 
   if (slides.length <= 1) return;
 
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const img = slide.querySelector('img');
     if (img && img.dataset.src && !img.src) {
       img.src = img.dataset.src;
-      img.removeAttribute('data-src');
+  	  img.removeAttribute('data-src');
     }
   }
   function preload(nextIndex) {
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (prevBtn) prevBtn.addEventListener('click', () => { prev(); start(); });
   dots.forEach((d, k) => d.addEventListener('click', () => { show(k); start(); }));
 
-  slider.addEventListener('mouseenter', stop);
+s   slider.addEventListener('mouseenter', stop);
   slider.addEventListener('mouseleave', start);
   document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
 
