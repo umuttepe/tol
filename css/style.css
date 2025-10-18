@@ -123,4 +123,44 @@ footer{background:var(--tol-primary);color:var(--tol-muted);text-align:center;pa
   .hero-slider{ height:50vh; min-height:300px; }
   .hero-nav{ width:38px; height:38px; font-size:22px; }
 }
+/* === Service detail pages === */
+.navbar .inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:36px;width:auto;border-radius:4px}
+.brand-title{font-weight:700;color:var(--tol-primary)}
+.nav-right a{margin-left:18px;color:var(--tol-primary)}
+
+.breadcrumb{font-size:.9rem;color:#445}
+.breadcrumb a{color:inherit}
+
+.hero{
+  background:linear-gradient(180deg, rgba(240,166,202,.15), rgba(76,62,217,.08) 60%, transparent 100%);
+  padding:42px 0;
+}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.hero h1{margin:0 0 10px;color:var(--tol-primary);font-size:2.2rem;line-height:1.2}
+.hero .tagline{color:#334;margin:6px 0 14px;font-size:1.1rem}
+.hero-figure{display:flex;justify-content:flex-end}
+.hero-figure img{max-width:100%;height:auto;border-radius:10px;border:1px solid var(--tol-muted);background:var(--tol-white)}
+
+.section{padding:36px 0}
+h2.section-title{color:var(--tol-secondary);font-size:1.4rem;border-bottom:2px solid var(--tol-muted);padding-bottom:8px;margin:0 0 18px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.callout{background:rgba(240,166,202,.18);border-left:4px solid var(--tol-accent);padding:18px;border-radius:8px}
+.callout h3{margin:0 0 8px;color:var(--tol-primary);font-size:1.05rem}
+
+.cta{padding:40px 0}
+.cta-box{background:var(--tol-white);border:1px solid var(--tol-muted);border-radius:10px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 6px 18px rgba(0,0,0,.05)}
+.btn{display:inline-block;background:var(--tol-secondary);color:#fff;font-weight:700;padding:12px 18px;border-radius:8px}
+.btn:hover{background:#3a2db8;text-decoration:none}
+
+footer{border-top:1px solid var(--tol-muted);padding:18px 0;color:#556;text-align:center}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-figure{justify-content:center}
+}
+@media (max-width:700px){
+  .two-col{grid-template-columns:1fr}
+}
 
