@@ -145,6 +145,11 @@
             gap: 30px;
         }
 
+        /* Anchor wrapper so cards are real links */
+        .service-card-link{display:block;color:inherit;text-decoration:none}
+        .service-card-link:focus .service-card, .service-card-link:focus-visible .service-card{outline:3px solid var(--tol-secondary);outline-offset:4px}
+
+
         .service-card {
             background-color: var(--tol-white);
             border: 1px solid var(--tol-muted);
@@ -310,6 +315,7 @@
             <div class="services-grid">
 
                 <!-- Service 1: Linear Static FEA -->
+                <a class="service-card-link" href="services/linear-static-fea.html" aria-label="Linear Static FEA — details">
                 <div class="service-card">
                     <img src="assets/images/aaaa.png" alt="Stress analysis heatmap on a mechanical part.">
                     <h3>Linear Static FEA</h3>
@@ -327,10 +333,11 @@
                             <li>Model/mesh quality checklist</li>
                         </ul>
                     </div>
-                </div>
+                </div></a>
 
-                <!-- Service 2: Transient Dynamics -->
-                <div class="service-card">
+            <!-- Service 2: Transient Dynamics -->
+                <a class="service-card-link" href="services/transient-dynamics.html" aria-label="Transient Dynamics — details">
+                <div class="service-card">rd">
                     <img src="assets/images/bbbb.png" alt="Transient response illustration with time histories.">
                     <h3>Transient Dynamics</h3>
                     <h4>What We Do</h4>
@@ -346,10 +353,11 @@
                             <li>Critical event analysis for design review</li>
                         </ul>
                     </div>
-                </div>
+                </div></a>
 
-                <!-- Service 3: Modal & Frequency Response -->
-                <div class="service-card">
+            <!-- Service 3: Modal & Frequency Response -->
+                <a class="service-card-link" href="services/modal-frequency-response.html" aria-label="Modal & Frequency Response — details">
+                <div class="service-card">rd">
                     <img src="assets/images/cccc.png" alt="Modal/FRF plot or mode shape visualization.">
                     <h3>Modal & Frequency Response</h3>
                     <h4>What We Do</h4>
@@ -365,10 +373,11 @@
                             <li>Resonance avoidance playbook</li>
                         </ul>
                     </div>
-                </div>
+                </div></a>
 
-                <!-- Service 4: Fatigue Analysis -->
-                <div class="service-card">
+            <!-- Service 4: Fatigue Analysis -->
+                <a class="service-card-link" href="services/fatigue-weld.html" aria-label="Fatigue Analysis (Weld Specialization) — details">
+                <div class="service-card">rd">
                     <img src="assets/images/dddd.png" alt="Fatigue life contour on welded structure.">
                     <h3>Fatigue Analysis (Weld Specialization)</h3>
                     <h4>What We Do</h4>
@@ -384,10 +393,11 @@
                             <li>Quantified before/after design improvements</li>
                         </ul>
                     </div>
-                </div>
+                </div></a>
 
-                <!-- Service 5: Multibody Dynamics -->
-                <div class="service-card">
+            <!-- Service 5: Multibody Dynamics -->
+                <a class="service-card-link" href="services/multibody-load-extraction.html" aria-label="Multibody Dynamics & Load Extraction — details">
+                <div class="service-card">rd">
                     <img src="assets/images/eeee.png" alt="Multibody mechanism schematic / load extraction.">
                     <h3>Multibody Dynamics & Load Extraction</h3>
                     <h4>What We Do</h4>
@@ -403,10 +413,11 @@
                             <li>Ready-to-run FEA load decks</li>
                         </ul>
                     </div>
-                </div>
+                </div></a>
                 
-                <!-- Service 6: Structural Optimization -->
-                <div class="service-card">
+            <!-- Service 6: Structural Optimization -->
+                <a class="service-card-link" href="services/structural-optimization.html" aria-label="Structural Optimization — details">
+                <div class="service-card">rd">
                     <img src="assets/images/ffff.png" alt="Topology/shape optimization visualization.">
                     <h3>Structural Optimization</h3>
                     <h4>What We Do</h4>
@@ -422,10 +433,11 @@
                             <li>CAD-ready geometry guidance</li>
                         </ul>
                     </div>
-                </div>
+                </div></a>
 
-                <!-- Service 7: System-Level Optimization -->
-                <div class="service-card">
+            <!-- Service 7: System-Level Optimization -->
+                <a class="service-card-link" href="services/system-level-optimization.html" aria-label="System-Level Optimization — details">
+                <div class="service-card">rd">
                     <img src="assets/images/gggg.pnh" alt="System-level optimization / Pareto plot placeholder.">
                     <h3>System-Level Optimization</h3>
                     <h4>What We Do</h4>
@@ -441,10 +453,11 @@
                             <li>Parameter sensitivity analysis</li>
                         </ul>
                     </div>
-                </div>
+                </div></a>
                 
-                <!-- Service 8: Control of Mechanical Systems -->
-                <div class="service-card">
+            <!-- Service 8: Control of Mechanical Systems -->
+                <a class="service-card-link" href="services/control-of-mechanical-systems.html" aria-label="Control of Mechanical Systems — details">
+                <div class="service-card">rd">
                     <img src="assets/images/aaaa.png" alt="Control block diagram placeholder.">
                     <h3>Control of Mechanical Systems</h3>
                     <h4>What We Do</h4>
@@ -460,10 +473,11 @@
                             <li>System performance validation plots</li>
                         </ul>
                     </div>
-                </div>
+                </div></a>
                 
-                <!-- Service 9: Mechanical System Modeling -->
-                <div class="service-card">
+            <!-- Service 9: Mechanical System Modeling -->
+                <a class="service-card-link" href="services/mechanical-system-modeling.html" aria-label="Mechanical System Modeling — details">
+                <div class="service-card">rd">
                     <img src="assets/images/bbbb.png" alt="State-space / model validation placeholder.">
                     <h3>Mechanical System Modeling</h3>
                     <h4>What We Do</h4>
@@ -479,10 +493,11 @@
                             <li>Validation plots and error analysis</li>
                         </ul>
                     </div>
-                </div>
+                </div></a>
                 
-                <!-- Service 10: CAD Design Improvements -->
-                <div class="service-card">
+            <!-- Service 10: CAD Design Improvements -->
+                <a class="service-card-link" href="services/cad-design-improvements.html" aria-label="Analysis-Driven CAD Improvements — details">
+                <div class="service-card">rd">
                     <img src="assets/images/cccc.png" alt="CAD before/after improvement placeholder.">
                     <h3>Analysis-Driven CAD Improvements</h3>
                     <h4>What We Do</h4>
@@ -498,7 +513,7 @@
                             <li>Before/after performance metrics (FoS, life, mass)</li>
                         </ul>
                     </div>
-                </div>
+                </div></a>
 
             </div>
         </div>
@@ -571,34 +586,7 @@
         }
         form.addEventListener("submit", handleSubmit)
 
-        // === Make service cards clickable: map titles to detail pages ===
-        (function(){
-          const mapping = {
-            'Linear Static FEA':'linear-static-fea',
-            'Transient Dynamics':'transient-dynamics',
-            'Modal & Frequency Response':'modal-frequency-response',
-            'Fatigue Analysis (Weld Specialization)':'fatigue-weld',
-            'Multibody Dynamics & Load Extraction':'multibody-load-extraction',
-            'Structural Optimization':'structural-optimization',
-            'System-Level Optimization':'system-level-optimization',
-            'Control of Mechanical Systems':'control-of-mechanical-systems',
-            'Mechanical System Modeling':'mechanical-system-modeling',
-            'Analysis-Driven CAD Improvements':'cad-design-improvements'
-          };
-          function slugify(s){
-            return s.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
-          }
-          document.querySelectorAll('.service-card').forEach(card=>{
-            const title = card.querySelector('h3')?.textContent.trim();
-            const slug = mapping[title] || slugify(title||'');
-            const href = 'services/' + slug + '.html';
-            card.setAttribute('tabindex','0');
-            card.setAttribute('role','link');
-            card.setAttribute('aria-label', (title||'Service') + ' — read more');
-            card.addEventListener('click', ()=>{ window.location.href = href; });
-            card.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); window.location.href = href; }});
-          });
-        })();
+        
     </script>
 
 </body>
